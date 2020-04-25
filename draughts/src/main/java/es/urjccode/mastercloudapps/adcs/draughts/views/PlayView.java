@@ -10,7 +10,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 
 class PlayView extends SubView {
-    
+
     private static final String COLOR_PARAM = "#color";
     private static final String[] COLOR_VALUES = { "blancas", "negras" };
     private static final String PROMPT = "Mueven las " + PlayView.COLOR_PARAM + ": ";
@@ -18,7 +18,7 @@ class PlayView extends SubView {
     private static final String MOVEMENT_FORMAT = "[1-8]{2}(\\.[1-8]{2}){1,2}";
     private static final String ERROR_MESSAGE = "Error!!! Formato incorrecto";
     private static final String LOST_MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
-    private String string;
+    private String consoleInputMoveString;
 
     PlayView() {
         super();
@@ -29,7 +29,7 @@ class PlayView extends SubView {
         Error error;
         do {
             error = null;
-            this.string = this.read(playController.getColor());
+            this.consoleInputMoveString = this.read(playController.getColor());
             if (this.isCanceledFormat())
                 playController.cancel();
             else if (!this.isMoveFormat()) {
@@ -50,11 +50,11 @@ class PlayView extends SubView {
     }
 
     private boolean isCanceledFormat() {
-        return string.equals(PlayView.CANCEL_FORMAT);
+        return consoleInputMoveString.equals(PlayView.CANCEL_FORMAT);
     }
 
     private boolean isMoveFormat() {
-        return Pattern.compile(PlayView.MOVEMENT_FORMAT).matcher(string).find();
+        return Pattern.compile(PlayView.MOVEMENT_FORMAT).matcher(consoleInputMoveString).find();
     }
 
     private void writeError(){
@@ -64,11 +64,11 @@ class PlayView extends SubView {
     private Coordinate[] getCoordinates() {
         assert this.isMoveFormat();
         List<Coordinate> coordinateList = new ArrayList<Coordinate>();
-        while (string.length() > 0){
-            coordinateList.add(Coordinate.getInstance(string.substring(0, 2)));
-            string = string.substring(2, string.length());
-            if (string.length() > 0 && string.charAt(0) == '.')
-                string = string.substring(1, string.length());
+        while (consoleInputMoveString.length() > 0){
+            coordinateList.add(Coordinate.getInstance(consoleInputMoveString.substring(0, 2)));
+            consoleInputMoveString = consoleInputMoveString.substring(2, consoleInputMoveString.length());
+            if (consoleInputMoveString.length() > 0 && consoleInputMoveString.charAt(0) == '.')
+                consoleInputMoveString = consoleInputMoveString.substring(1, consoleInputMoveString.length());
         }
         Coordinate[] coordinates = new Coordinate[coordinateList.size()];
         for(int i=0; i< coordinates.length; i++){
