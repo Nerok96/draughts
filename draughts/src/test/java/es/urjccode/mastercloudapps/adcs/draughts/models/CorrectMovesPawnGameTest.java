@@ -64,7 +64,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackEatingThenOk() {
+    public void testGivenGameWhenMoveWithWhiteEatingThenOk() {
         this.setGame(Color.WHITE,
             "        ",
             "        ",
@@ -87,7 +87,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithWhiteEatingThenOk() {
+    public void testGivenGameWhenMoveWithBlackEatingThenOk() {
         this.setGame(Color.BLACK,
             "        ",
             "        ",
@@ -112,7 +112,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackTwoEatingThenOk() {
+    public void testGivenGameWhenMoveWithWhiteTwoEatingThenOk() {
         this.setGame(Color.WHITE,
             "        ",
             "        ",
@@ -138,7 +138,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithWhiteTwoEatingThenOk() {
+    public void testGivenGameWhenMoveWithBlackTwoEatingThenOk() {
         this.setGame(Color.BLACK,
             "        ",
             "        ",
@@ -214,7 +214,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithWhiteCanEatButDoNotThenPunishment() {
+    public void testGivenGameWhenMoveWithBlackCanEatButDoNotThenPunishment() {
         this.setGame(Color.BLACK,
             "n n     ",
             " b      ",
@@ -239,7 +239,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackCanEatButDoNotThenPunishment() {
+    public void testGivenGameWhenMoveWithWhiteCanEatButDoNotThenPunishment() {
         this.setGame(Color.WHITE,
             "        ",
             "        ",
