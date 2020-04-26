@@ -241,31 +241,6 @@ public class CorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITEThenWithoutTOO_MUCH_ADVANCED() {
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "B       ",
-            "        ",
-            "        ");
-        setExpectedGame(Color.BLACK,
-            "     B  ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertMove(
-            new Coordinate(5, 0),
-            new Coordinate(0, 5));
-    }
-
-    @Test
     public void testGivenGameWhenMoveBLACKThenWithoutTOO_MUCH_ADVANCED() {
         setGame(Color.BLACK,
             "        ",
