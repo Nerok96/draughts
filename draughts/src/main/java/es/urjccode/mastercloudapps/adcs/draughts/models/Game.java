@@ -2,10 +2,11 @@ package es.urjccode.mastercloudapps.adcs.draughts.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
 
-    private Board board;
+    public Board board;
     private Turn turn;
 
     Game(Board board) {
@@ -72,6 +73,12 @@ public class Game {
             this.board.remove(forRemoving);
         }
         this.board.move(coordinates[pair], coordinates[pair + 1]);
+    }
+
+    private Coordinate getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(
+        ArrayList<Coordinate> coordinatesOfPiecesInTurnInBoardArray) {
+        Random r = new Random();
+        return coordinatesOfPiecesInTurnInBoardArray.remove(r.nextInt(coordinatesOfPiecesInTurnInBoardArray.size()));
     }
 
     private Coordinate getBetweenDiagonalPiece(int pair, Coordinate... coordinates) {
