@@ -97,12 +97,12 @@ public class GameViewTest {
     }
 
     private static String marshall(List<String> strings){
-        String string = "";
+        StringBuilder string = new StringBuilder();
         Iterator<String> iterator = strings.iterator();
         while (iterator.hasNext()){
-            string += iterator.next();
+            string.append(iterator.next());
         }
-        return string;
+        return string.toString();
     }
 
 }
