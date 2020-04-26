@@ -13,9 +13,4 @@ public class Draught extends Piece {
     return null;
   }
 
-  @Override
-  public String getCode(){
-		return super.getCode().toUpperCase();
-  }
-
 }
