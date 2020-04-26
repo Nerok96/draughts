@@ -21,22 +21,6 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITEEatingThenCOLLEAGUE_EATING() {
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "     b  ",
-            "      B ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.COLLEAGUE_EATING,
-            new Coordinate(5, 6),
-            new Coordinate(0, 1));
-    }
-
-    @Test
     public void testGivenGameWhenMoveBLACKEatingThenCOLLEAGUE_EATING() {
         setGame(Color.BLACK,
             "        ",
