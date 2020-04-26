@@ -21,22 +21,6 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITEEatingThenNOT_EMPTY_TARGET() {
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "   n    ",
-            "  n     ",
-            " B      ",
-            "        ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(4, 1),
-            new Coordinate(2, 3));
-    }
-
-    @Test
     public void testGivenGameWhenMoveBLACKEatingThenNOT_EMPTY_TARGET() {
         setGame(Color.BLACK,
             "        ",
