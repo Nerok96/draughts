@@ -31,8 +31,8 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ");
-        assertErrorMove(Error.OPPOSITE_PIECE, 
-            new Coordinate(2, 1), 
+        assertErrorMove(Error.OPPOSITE_PIECE,
+            new Coordinate(2, 1),
             new Coordinate(3, 0));
     }
 
@@ -48,7 +48,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "  B     ");
         assertErrorMove(Error.OPPOSITE_PIECE,
-            new Coordinate(7, 2), 
+            new Coordinate(7, 2),
             new Coordinate(6, 3));
     }
 
@@ -64,7 +64,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(5, 2), 
+            new Coordinate(5, 2),
             new Coordinate(4, 2));
     }
 
@@ -80,13 +80,13 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(5, 2), 
+            new Coordinate(5, 2),
             new Coordinate(6, 2));
     }
 
     @Test
     public void testGivenGameWhenMoveRightThenNOT_DIAGONAL() {
-        setGame(Color.BLACK, 
+        setGame(Color.BLACK,
             " N      ",
             "        ",
             "        ",
@@ -95,8 +95,8 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ");
-        assertErrorMove(Error.NOT_DIAGONAL, 
-            new Coordinate(0, 1), 
+        assertErrorMove(Error.NOT_DIAGONAL,
+            new Coordinate(0, 1),
             new Coordinate(0, 2));
     }
 
@@ -112,7 +112,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(0, 1), 
+            new Coordinate(0, 1),
             new Coordinate(0, 0));
     }
 
@@ -128,7 +128,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(4, 7), 
+            new Coordinate(4, 7),
             new Coordinate(3, 6));
     }
 
@@ -144,7 +144,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(0, 1), 
+            new Coordinate(0, 1),
             new Coordinate(1, 0));
     }
 
@@ -160,7 +160,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(4, 1), 
+            new Coordinate(4, 1),
             new Coordinate(2, 3));
     }
 
@@ -176,7 +176,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(3, 0), 
+            new Coordinate(3, 0),
             new Coordinate(5, 2));
     }
 
@@ -192,7 +192,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(5, 2), 
+            new Coordinate(5, 2),
             new Coordinate(3, 4),
             new Coordinate(2, 4));
     }
@@ -209,7 +209,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(3, 4), 
+            new Coordinate(3, 4),
             new Coordinate(5, 2),
             new Coordinate(4, 2));
     }
@@ -226,7 +226,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(3, 4), 
+            new Coordinate(3, 4),
             new Coordinate(5, 2),
             new Coordinate(5, 3));
     }
@@ -243,7 +243,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(4, 3), 
+            new Coordinate(4, 3),
             new Coordinate(2, 5),
             new Coordinate(1, 5));
     }
@@ -260,7 +260,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             " n      ",
             "B       ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(7, 0), 
+            new Coordinate(7, 0),
             new Coordinate(5, 2),
             new Coordinate(3, 4));
     }
@@ -277,12 +277,12 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
-            new Coordinate(1, 2), 
+            new Coordinate(1, 2),
             new Coordinate(3, 4),
             new Coordinate(5, 2));
     }
 
-    
+
     @Test
     public void testGivenGameWhenMoveWHITEEatingThenCOLLEAGUE_EATING(){
         setGame(Color.WHITE,
@@ -295,7 +295,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.COLLEAGUE_EATING,
-            new Coordinate(5, 6), 
+            new Coordinate(5, 6),
             new Coordinate(0, 1));
     }
 
@@ -311,7 +311,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.COLLEAGUE_EATING,
-            new Coordinate(5, 6), 
+            new Coordinate(5, 6),
             new Coordinate(0, 1));
     }
 
@@ -327,7 +327,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.TOO_MUCH_EATINGS,
-            new Coordinate(5, 6), 
+            new Coordinate(5, 6),
             new Coordinate(0, 1));
     }
 
@@ -343,7 +343,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.TOO_MUCH_EATINGS,
-            new Coordinate(5, 6), 
+            new Coordinate(5, 6),
             new Coordinate(0, 1));
     }
 
@@ -359,8 +359,8 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.TOO_MUCH_JUMPS,
-            new Coordinate(4, 1), 
-            new Coordinate(3, 2), 
+            new Coordinate(4, 1),
+            new Coordinate(3, 2),
             new Coordinate(2, 3));
     }
 
@@ -376,8 +376,8 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.TOO_MUCH_JUMPS,
-            new Coordinate(2, 3), 
-            new Coordinate(3, 4), 
+            new Coordinate(2, 3),
+            new Coordinate(3, 4),
             new Coordinate(4, 3));
     }
 
@@ -393,26 +393,8 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ");
         assertErrorMove(Error.TOO_MUCH_JUMPS,
-            new Coordinate(4, 1), 
-            new Coordinate(2, 3), 
+            new Coordinate(4, 1),
+            new Coordinate(2, 3),
             new Coordinate(1, 2));
     }
-
-    @Test
-    public void testGivenGameWhenMoveBLACKEatingThenTOO_MUCH_ADVANCED(){
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "     n  ",
-            "      B ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.TOO_MUCH_JUMPS,
-            new Coordinate(5, 6), 
-            new Coordinate(3, 4),
-            new Coordinate(0, 1));
-    }
-
 }
