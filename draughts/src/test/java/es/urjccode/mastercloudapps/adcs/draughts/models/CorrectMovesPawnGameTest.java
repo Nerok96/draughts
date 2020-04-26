@@ -175,7 +175,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
             "        ",
             "        ");
         this.setExpectedGame(Color.BLACK,
-            " B      ",
+            " b      ",
             "        ",
             "        ",
             "        ",
