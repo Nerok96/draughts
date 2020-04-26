@@ -77,8 +77,14 @@ public class Game {
 
     private void deleteRandomPieceForPunishment(Coordinate originCoordinate) {
         ArrayList<Coordinate> coordinatesOfPiecesInBoard = new ArrayList<>();
-        //TODO iterate over all the board looking for the pieces that matches the turn color and add them to the array
-
+        for (int i = 0; i < Coordinate.getDimension(); i++){
+            for (int j = 0; j < Coordinate.getDimension(); j++) {
+                Piece p = this.board.getPiece(new Coordinate(i, j));
+                if(p !=null && p.color.equals(this.turn.getColor())){
+                    coordinatesOfPiecesInBoard.add(new Coordinate(i, j));
+                }
+            }
+        }
         //TODO once found, delete one random, not the one that is being moving
     }
 
