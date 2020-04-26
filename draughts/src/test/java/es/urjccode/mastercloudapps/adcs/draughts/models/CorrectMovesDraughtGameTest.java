@@ -265,32 +265,4 @@ public class CorrectMovesDraughtGameTest extends GameTest {
             new Coordinate(5, 4));
     }
 
-    @Test
-    public void testGivenGameWhenMoveWHITEThenWithoutTOO_MUCH_EATINGS() {
-        setGame(Color.WHITE,
-            "        ",
-            "    n   ",
-            "        ",
-            "        ",
-            "        ",
-            "    n n ",
-            " n      ",
-            "B       ");
-        setExpectedGame(Color.BLACK,
-            "   B    ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertMove(
-            new Coordinate(7, 0),
-            new Coordinate(4, 3),
-            new Coordinate(6, 5),
-            new Coordinate(4, 7),
-            new Coordinate(0, 3));
-    }
-
 }
