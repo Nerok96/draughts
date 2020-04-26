@@ -189,7 +189,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenBlackPawnAtLimitThenNewDraugts(){
+    public void testGivenGameWhenBlackPawnAtLimitThenStillSamePawn(){
         this.setGame(Color.BLACK,
             "        ",
             "        ",
