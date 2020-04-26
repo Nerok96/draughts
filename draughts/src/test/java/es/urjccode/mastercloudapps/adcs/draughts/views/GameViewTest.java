@@ -39,7 +39,7 @@ public class GameViewTest {
     public void before() {
         MockitoAnnotations.initMocks(this);
     }
-    
+
     @Test
     public void testGivenGameViewWhenInteractThenOk(){
         Game game = new GameBuilder().build();
@@ -61,7 +61,7 @@ public class GameViewTest {
     }
 
     @Test
-    public void testGivenGameViewWhenInteractWithDraughtThenOk(){
+    public void testGivenGameViewWhenInteractWithBoardLimitsThenOk(){
         Game game = new GameBuilder().rows(
             "        ",
             "b       ",
@@ -73,11 +73,11 @@ public class GameViewTest {
             "        ").build();
         game.move(
           new Coordinate(1, 0),
-          new Coordinate(0, 1)  
+          new Coordinate(0, 1)
         );
         game.move(
           new Coordinate(6, 1),
-          new Coordinate(7, 0)  
+          new Coordinate(7, 0)
         );
         StartController startController = new StartController(game, new State());
         this.gameView.write(startController);
