@@ -21,22 +21,6 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveRightThenNOT_DIAGONAL() {
-        setGame(Color.BLACK,
-            " N      ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.NOT_DIAGONAL,
-            new Coordinate(0, 1),
-            new Coordinate(0, 2));
-    }
-
-    @Test
     public void testGivenGameWhenMoveLeftThenNOT_DIAGONAL() {
         setGame(Color.BLACK,
             " N      ",
