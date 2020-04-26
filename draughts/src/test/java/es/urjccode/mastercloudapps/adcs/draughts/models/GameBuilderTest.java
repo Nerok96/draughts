@@ -84,4 +84,17 @@ public class GameBuilderTest {
             "        ",
             "b       ").build();
     }
+
+    @Test(expected = AssertionError.class)
+    public void testGivenGameBuilderWhenIncorrectWhiteDraughtThenError() {
+        Game game = this.gameBuilder.rows(
+            " n      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "B       ").build();
+    }
 }
