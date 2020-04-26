@@ -98,9 +98,8 @@ public class GameViewTest {
 
     private static String marshall(List<String> strings){
         StringBuilder string = new StringBuilder();
-        Iterator<String> iterator = strings.iterator();
-        while (iterator.hasNext()){
-            string.append(iterator.next());
+        for (String s : strings) {
+            string.append(s);
         }
         return string.toString();
     }
