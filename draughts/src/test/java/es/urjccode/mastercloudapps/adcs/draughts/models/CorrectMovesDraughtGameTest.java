@@ -13,32 +13,6 @@ public class CorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveBLACKThenWithoutNOT_ADVANCED() {
-        setGame(Color.BLACK,
-            "        ",
-            "N       ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        setExpectedGame(Color.WHITE,
-            " N      ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertMove(
-            new Coordinate(1, 0),
-            new Coordinate(0, 1));
-    }
-
-
-    @Test
     public void testGivenGameWhenMoveWHITEThenWithoutWITHOUT_EATING() {
         setGame(Color.WHITE,
             "        ",
