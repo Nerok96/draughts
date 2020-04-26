@@ -12,29 +12,4 @@ public class CorrectMovesDraughtGameTest extends GameTest {
         assertEquals(this.game, this.expectedGame);
     }
 
-    @Test
-    public void testGivenGameWhenMoveBLACKThenWithoutTOO_MUCH_ADVANCED() {
-        setGame(Color.BLACK,
-            "        ",
-            "        ",
-            " N      ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        setExpectedGame(Color.WHITE,
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "    N   ",
-            "        ",
-            "        ");
-        assertMove(
-            new Coordinate(2, 1),
-            new Coordinate(5, 4));
-    }
-
 }
