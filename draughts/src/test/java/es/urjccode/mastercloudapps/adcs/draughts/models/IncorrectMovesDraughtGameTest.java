@@ -181,7 +181,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveSecondUpThenNOT_DIAGONAL(){
+    public void testGivenGameWhenMoveSecondUpThenNOT_DIAGONAL() {
         setGame(Color.WHITE,
             "        ",
             "        ",
@@ -198,7 +198,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveSecondDownThenNOT_DIAGONAL(){
+    public void testGivenGameWhenMoveSecondDownThenNOT_DIAGONAL() {
         setGame(Color.BLACK,
             "        ",
             "        ",
@@ -215,7 +215,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveSecondRightThenNOT_DIAGONAL(){
+    public void testGivenGameWhenMoveSecondRightThenNOT_DIAGONAL() {
         setGame(Color.BLACK,
             "        ",
             "        ",
@@ -232,7 +232,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveSecondLeftThenNOT_DIAGONAL(){
+    public void testGivenGameWhenMoveSecondLeftThenNOT_DIAGONAL() {
         setGame(Color.WHITE,
             "        ",
             "        ",
@@ -249,7 +249,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITESecondThenNOT_EMPTY_TARGET(){
+    public void testGivenGameWhenMoveWHITESecondThenNOT_EMPTY_TARGET() {
         setGame(Color.WHITE,
             "        ",
             "        ",
@@ -266,7 +266,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveBLACKSecondThenNOT_EMPTY_TARGET(){
+    public void testGivenGameWhenMoveBLACKSecondThenNOT_EMPTY_TARGET() {
         setGame(Color.BLACK,
             "        ",
             "  N     ",
@@ -284,7 +284,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
 
 
     @Test
-    public void testGivenGameWhenMoveWHITEEatingThenCOLLEAGUE_EATING(){
+    public void testGivenGameWhenMoveWHITEEatingThenCOLLEAGUE_EATING() {
         setGame(Color.WHITE,
             "        ",
             "        ",
@@ -300,7 +300,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveBLACKEatingThenCOLLEAGUE_EATING(){
+    public void testGivenGameWhenMoveBLACKEatingThenCOLLEAGUE_EATING() {
         setGame(Color.BLACK,
             "        ",
             "        ",
@@ -316,7 +316,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITEEatingThenTOO_MUCH_EATINGS(){
+    public void testGivenGameWhenMoveWHITEEatingThenTOO_MUCH_EATINGS() {
         setGame(Color.WHITE,
             "        ",
             "        ",
@@ -332,7 +332,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveBLACKEatingThenTOO_MUCH_EATINGS(){
+    public void testGivenGameWhenMoveBLACKEatingThenTOO_MUCH_EATINGS() {
         setGame(Color.BLACK,
             "        ",
             "        ",
