@@ -21,22 +21,6 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWHITEThenOPPOSITE_PIECE() {
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            " N      ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.OPPOSITE_PIECE,
-            new Coordinate(2, 1),
-            new Coordinate(3, 0));
-    }
-
-    @Test
     public void testGivenGameWhenMoveBLACKThenOPPOSITE_PIECE() {
         setGame(Color.BLACK,
             "        ",
