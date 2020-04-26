@@ -101,21 +101,4 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             new Coordinate(2, 3));
     }
 
-    @Test
-    public void testGivenGameWhenMoveBLACKThenTOO_MUCH_JUMPS() {
-        setGame(Color.BLACK,
-            "        ",
-            "        ",
-            "   N    ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.TOO_MUCH_JUMPS,
-            new Coordinate(2, 3),
-            new Coordinate(3, 4),
-            new Coordinate(4, 3));
-    }
-
 }
