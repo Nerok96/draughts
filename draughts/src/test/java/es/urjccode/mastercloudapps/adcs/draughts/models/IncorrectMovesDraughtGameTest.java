@@ -51,21 +51,4 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             new Coordinate(5, 6),
             new Coordinate(0, 1));
     }
-
-    @Test
-    public void testGivenGameWhenMoveBLACKEatingThenTOO_MUCH_EATINGS() {
-        setGame(Color.BLACK,
-            "        ",
-            "        ",
-            "   b    ",
-            "        ",
-            "     b  ",
-            "      N ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.TOO_MUCH_EATINGS,
-            new Coordinate(5, 6),
-            new Coordinate(0, 1));
-    }
-
 }
