@@ -75,6 +75,13 @@ public class Game {
         this.board.move(coordinates[pair], coordinates[pair + 1]);
     }
 
+    private void deleteRandomPieceForPunishment(Coordinate originCoordinate) {
+        ArrayList<Coordinate> coordinatesOfPiecesInBoard = new ArrayList<>();
+        //TODO iterate over all the board looking for the pieces that matches the turn color and add them to the array
+
+        //TODO once found, delete one random, not the one that is being moving
+    }
+
     private Coordinate getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(
         ArrayList<Coordinate> coordinatesOfPiecesInTurnInBoardArray) {
         Random r = new Random();
