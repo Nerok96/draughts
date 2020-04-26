@@ -207,7 +207,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "  N     ");
+            "  n     ");
         this.assertMove(
                 new Coordinate(6,3),
                 new Coordinate(7,2));
