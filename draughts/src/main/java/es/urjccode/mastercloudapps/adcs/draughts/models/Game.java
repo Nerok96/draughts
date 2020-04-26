@@ -87,7 +87,12 @@ public class Game {
                 }
             }
         }
-        //TODO once found, delete one random, not the one that is being moving
+        if(coordinatesOfPiecesInBoard.size()>1){
+            coordinatesOfPiecesInBoard.remove(originCoordinate);
+            Coordinate coordinatesOfPieceToDeleteForPunishment =
+                getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(coordinatesOfPiecesInBoard);
+            this.board.remove(coordinatesOfPieceToDeleteForPunishment);
+        }
     }
 
     private Coordinate getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(
