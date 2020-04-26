@@ -47,7 +47,7 @@ public class PlayControllerTest {
     }
 
     @Test
-    public void testGivenPlayControllerWhenMoveWithoutMovementsThenIsBlocked() {
+    public void testGivenPlayControllerWhenMoveWithoutMovementsThenIsNotBlocked() {
         Game game = new GameBuilder().rows(
             "        ",
             "        ",
@@ -62,7 +62,7 @@ public class PlayControllerTest {
         Coordinate target = new Coordinate(4, 1);
         playController.move(origin, target);
         assertEquals(playController.getColor(target), Color.WHITE);
-        assertTrue(game.isBlocked());
+        assertFalse(game.isBlocked());
     }
 
     @Test

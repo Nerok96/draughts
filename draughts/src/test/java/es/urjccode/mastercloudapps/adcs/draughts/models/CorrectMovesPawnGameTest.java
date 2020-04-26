@@ -64,7 +64,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackEatingThenOk() {
+    public void testGivenGameWhenMoveWithWhiteEatingThenOk() {
         this.setGame(Color.WHITE,
             "        ",
             "        ",
@@ -87,7 +87,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithWhiteEatingThenOk() {
+    public void testGivenGameWhenMoveWithBlackEatingThenOk() {
         this.setGame(Color.BLACK,
             "        ",
             "        ",
@@ -112,7 +112,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackTwoEatingThenOk() {
+    public void testGivenGameWhenMoveWithWhiteTwoEatingThenOk() {
         this.setGame(Color.WHITE,
             "        ",
             "        ",
@@ -138,7 +138,7 @@ public class CorrectMovesPawnGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithWhiteTwoEatingThenOk() {
+    public void testGivenGameWhenMoveWithBlackTwoEatingThenOk() {
         this.setGame(Color.BLACK,
             "        ",
             "        ",
@@ -213,4 +213,53 @@ public class CorrectMovesPawnGameTest extends GameTest {
                 new Coordinate(7,2));
     }
 
+    @Test
+    public void testGivenGameWhenMoveWithBlackCanEatButDoNotThenPunishment() {
+        this.setGame(Color.BLACK,
+            "n n     ",
+            " b      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.setExpectedGame(Color.WHITE,
+            "        ",
+            " b n    ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.assertMove(
+            new Coordinate(0, 2),
+            new Coordinate(1, 3));
+    }
+
+    @Test
+    public void testGivenGameWhenMoveWithWhiteCanEatButDoNotThenPunishment() {
+        this.setGame(Color.WHITE,
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "  n     ",
+            " b b    ");
+        this.setExpectedGame(Color.BLACK,
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "b n     ",
+            "        ");
+        this.assertMove(
+            new Coordinate(7, 1),
+            new Coordinate(6, 0));
+    }
 }

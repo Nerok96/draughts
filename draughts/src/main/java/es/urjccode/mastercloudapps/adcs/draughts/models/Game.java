@@ -2,10 +2,11 @@ package es.urjccode.mastercloudapps.adcs.draughts.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
 
-    private Board board;
+    public Board board;
     private Turn turn;
 
     Game(Board board) {
@@ -70,8 +71,34 @@ public class Game {
         if (forRemoving != null) {
             removedCoordinates.add(0, forRemoving);
             this.board.remove(forRemoving);
+        }else{
+            deleteRandomPieceForPunishment(coordinates[pair]);
         }
         this.board.move(coordinates[pair], coordinates[pair + 1]);
+    }
+
+    private void deleteRandomPieceForPunishment(Coordinate originCoordinate) {
+        ArrayList<Coordinate> coordinatesOfPiecesInBoard = new ArrayList<>();
+        for (int i = 0; i < Coordinate.getDimension(); i++){
+            for (int j = 0; j < Coordinate.getDimension(); j++) {
+                Piece p = this.board.getPiece(new Coordinate(i, j));
+                if(p !=null && p.color.equals(this.turn.getColor())){
+                    coordinatesOfPiecesInBoard.add(new Coordinate(i, j));
+                }
+            }
+        }
+        if(coordinatesOfPiecesInBoard.size()>1){
+            coordinatesOfPiecesInBoard.remove(originCoordinate);
+            Coordinate coordinatesOfPieceToDeleteForPunishment =
+                getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(coordinatesOfPiecesInBoard);
+            this.board.remove(coordinatesOfPieceToDeleteForPunishment);
+        }
+    }
+
+    private Coordinate getRandomCoordinateFromCoordinatesOfPiecesInTurnInBoardArray(
+        ArrayList<Coordinate> coordinatesOfPiecesInTurnInBoardArray) {
+        Random r = new Random();
+        return coordinatesOfPiecesInTurnInBoardArray.remove(r.nextInt(coordinatesOfPiecesInTurnInBoardArray.size()));
     }
 
     private Coordinate getBetweenDiagonalPiece(int pair, Coordinate... coordinates) {
