@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNull;
 import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class GameBuilderTest {
@@ -12,7 +13,7 @@ public class GameBuilderTest {
     private GameBuilder gameBuilder;
 
     @Before
-    public void before(){
+    public void before() {
         this.gameBuilder = new GameBuilder();
     }
 
@@ -21,7 +22,7 @@ public class GameBuilderTest {
         this.gameBuilder.rows(
             "        ",
             "        ",
- //           "        ",
+            //           "        ",
             "        ",
             "        ",
             "        ",
@@ -72,4 +73,29 @@ public class GameBuilderTest {
         assertNull(game.getColor(new Coordinate(7, 1)));
     }
 
+    @Test(expected = AssertionError.class)
+    public void testGivenGameBuilderWhenIncorrectBlackDraughtThenError() {
+        Game game = this.gameBuilder.rows(
+            " N      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "b       ").build();
+    }
+
+    @Test(expected = AssertionError.class)
+    public void testGivenGameBuilderWhenIncorrectWhiteDraughtThenError() {
+        Game game = this.gameBuilder.rows(
+            " n      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "B       ").build();
+    }
 }

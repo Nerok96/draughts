@@ -39,29 +39,29 @@ public class GameViewTest {
     public void before() {
         MockitoAnnotations.initMocks(this);
     }
-    
+
     @Test
-    public void testGivenGameViewWhenInteractThenOk(){
+    public void testGivenGameViewWhenInteractThenOk() {
         Game game = new GameBuilder().build();
         StartController startController = new StartController(game, new State());
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(
-        " 12345678",
-        "1 n n n n",
-        "2n n n n ",
-        "3 n n n n",
-        "4        ",
-        "5        ",
-        "6b b b b ",
-        "7 b b b b",
-        "8b b b b ",
-        " 12345678");
+            " 12345678",
+            "1 n n n n",
+            "2n n n n ",
+            "3 n n n n",
+            "4        ",
+            "5        ",
+            "6b b b b ",
+            "7 b b b b",
+            "8b b b b ",
+            " 12345678");
         assertEquals(marshall(rows), marshall(argument.getAllValues()));
     }
 
     @Test
-    public void testGivenGameViewWhenInteractWithDraughtThenOk(){
+    public void testGivenGameViewWhenInteractWithBoardLimitsThenOk() {
         Game game = new GameBuilder().rows(
             "        ",
             "b       ",
@@ -72,37 +72,36 @@ public class GameViewTest {
             " n      ",
             "        ").build();
         game.move(
-          new Coordinate(1, 0),
-          new Coordinate(0, 1)  
+            new Coordinate(1, 0),
+            new Coordinate(0, 1)
         );
         game.move(
-          new Coordinate(6, 1),
-          new Coordinate(7, 0)  
+            new Coordinate(6, 1),
+            new Coordinate(7, 0)
         );
         StartController startController = new StartController(game, new State());
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(
-        " 12345678",
-        "1 B      ",
-        "2        ",
-        "3        ",
-        "4        ",
-        "5        ",
-        "6        ",
-        "7        ",
-        "8N       ",
-        " 12345678");
+            " 12345678",
+            "1 b      ",
+            "2        ",
+            "3        ",
+            "4        ",
+            "5        ",
+            "6        ",
+            "7        ",
+            "8n       ",
+            " 12345678");
         assertEquals(marshall(rows), marshall(argument.getAllValues()));
     }
 
-    private static String marshall(List<String> strings){
-        String string = "";
-        Iterator<String> iterator = strings.iterator();
-        while (iterator.hasNext()){
-            string += iterator.next();
+    private static String marshall(List<String> strings) {
+        StringBuilder string = new StringBuilder();
+        for (String s : strings) {
+            string.append(s);
         }
-        return string;
+        return string.toString();
     }
 
 }
