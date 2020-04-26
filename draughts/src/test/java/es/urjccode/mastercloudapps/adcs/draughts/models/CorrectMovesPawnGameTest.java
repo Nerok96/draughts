@@ -213,4 +213,28 @@ public class CorrectMovesPawnGameTest extends GameTest {
                 new Coordinate(7,2));
     }
 
+    @Test
+    public void testGivenGameWhenMoveWithWhiteCanEatButDoNotThenPunishment() {
+        this.setGame(Color.BLACK,
+            "n n     ",
+            " b      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.setExpectedGame(Color.WHITE,
+            "        ",
+            " b n    ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.assertMove(
+            new Coordinate(0, 2),
+            new Coordinate(1, 3));
+    }
 }
