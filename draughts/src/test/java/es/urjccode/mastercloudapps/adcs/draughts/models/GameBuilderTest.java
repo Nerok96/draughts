@@ -72,4 +72,16 @@ public class GameBuilderTest {
         assertNull(game.getColor(new Coordinate(7, 1)));
     }
 
+    @Test(expected = AssertionError.class)
+    public void testGivenGameBuilderWhenIncorrectBlackDraughtThenError() {
+        Game game = this.gameBuilder.rows(
+            " N      ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "b       ").build();
+    }
 }
