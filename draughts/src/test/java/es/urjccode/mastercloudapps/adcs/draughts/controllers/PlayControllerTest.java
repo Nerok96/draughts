@@ -47,7 +47,7 @@ public class PlayControllerTest {
     }
 
     @Test
-    public void testGivenPlayControllerWhenMoveWithoutMovementsThenIsBlocked() {
+    public void testGivenPlayControllerWhenMoveWithoutMovementsThenIsNotBlocked() {
         Game game = new GameBuilder().rows(
             "        ",
             "        ",
