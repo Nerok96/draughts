@@ -12,7 +12,6 @@ import org.junit.runners.Suite;
     InitialGameTest.class,
     IncorrectMovesPawnGameTest.class,
     CorrectMovesPawnGameTest.class,
-    CorrectMovesDraughtGameTest.class,
     IsBlockedGameTest.class } )
 public final class AllModelTest {
 }
