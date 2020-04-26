@@ -11,10 +11,10 @@ public class GameBuilder {
 
     public GameBuilder() {
         this.color = null;
-        this.strings = new ArrayList<String>();
+        this.strings = new ArrayList<>();
     }
 
-    public GameBuilder color(Color color){
+    public GameBuilder color(Color color) {
         this.color = color;
         return this;
     }
@@ -62,14 +62,14 @@ public class GameBuilder {
 
     private Color getColor(char character) {
         switch (character) {
-        case 'b':
-        case 'B':
-            return Color.WHITE;
-        case 'n':
-        case 'N':
-            return Color.BLACK;
-        default:
-            return null;
+            case 'b':
+            case 'B':
+                return Color.WHITE;
+            case 'n':
+            case 'N':
+                return Color.BLACK;
+            default:
+                return null;
         }
     }
 
