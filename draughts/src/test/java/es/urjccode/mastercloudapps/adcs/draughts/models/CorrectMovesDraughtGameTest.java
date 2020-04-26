@@ -13,29 +13,6 @@ public class CorrectMovesDraughtGameTest extends GameTest {
     }
 
     @Test
-    public void testGivenGameWhenMoveWithBlackEatingThenOk() {
-        this.setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "        ",
-            "  n     ",
-            " B      ",
-            "        ",
-            "        ",
-            "        ");
-        this.setExpectedGame(Color.BLACK,
-            "        ",
-            "        ",
-            "   B    ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ");
-        this.assertMove(new Coordinate(4, 1), new Coordinate(2, 3));
-    }
-
-    @Test
     public void testGivenGameWhenMoveWithWhiteEatingThenOk() {
         this.setGame(Color.BLACK,
             "        ",
